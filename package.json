@@ -1,0 +1,39 @@
+{
+  "name": "cosmosurge",
+  "private": true,
+  "version": "0.0.1",
+  "description": "cosmosurge",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watch",
+    "generate": "stencil generate"
+  },
+  "dependencies": {
+    "@capacitor/android": "^1.4.0",
+    "@capacitor/cli": "^1.4.0",
+    "@capacitor/core": "^1.4.0",
+    "@ionic-native/image-picker": "^5.19.1",
+    "@ionic/core": "^4.11.7",
+    "@jeepq/capacitor": "0.0.1-beta.2",
+    "@types/uuid": "^3.4.6",
+    "cordova-plugin-telerik-imagepicker": "^2.3.3",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@stencil/core": "^1.8.4",
+    "rollup-plugin-node-polyfills": "^0.2.1"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-telerik-imagepicker": {
+        "PHOTO_LIBRARY_USAGE_DESCRIPTION": "App wants to access your gallery"
+      }
+    }
+  }
+}

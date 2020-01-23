@@ -1,0 +1,7 @@
+{
+  "name": "cosmopatient",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "custom"
+}

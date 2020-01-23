@@ -1,0 +1,8 @@
+{
+  "appId": "com.cosmosurge.app",
+  "appName": "cosmosurge",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
