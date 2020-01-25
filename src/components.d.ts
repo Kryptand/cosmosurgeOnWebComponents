@@ -6,85 +6,64 @@
  */
 
 
-import {HTMLStencilElement, JSXBase} from '@stencil/core/internal';
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   Patient,
 } from './components/patient-list/patient';
 
 export namespace Components {
-  interface AppHome {
-  }
-
+  interface AppHome {}
   interface AppProfile {
     'name': string;
   }
-
-  interface AppRoot {
-  }
-
+  interface AppRoot {}
   interface CosmoPatientForm {
     'patient': Patient;
   }
-
   interface CosmoPatientList {
     'patients': Patient[];
   }
-
-  interface CosmoPatientListContainer {
-  }
+  interface CosmoPatientListContainer {}
 }
 
 declare global {
 
 
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
-  }
-
+  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
   var HTMLAppHomeElement: {
     prototype: HTMLAppHomeElement;
-    new(): HTMLAppHomeElement;
+    new (): HTMLAppHomeElement;
   };
 
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
-  }
-
+  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
   var HTMLAppProfileElement: {
     prototype: HTMLAppProfileElement;
-    new(): HTMLAppProfileElement;
+    new (): HTMLAppProfileElement;
   };
 
-  interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
-  }
-
+  interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
-    new(): HTMLAppRootElement;
+    new (): HTMLAppRootElement;
   };
 
-  interface HTMLCosmoPatientFormElement extends Components.CosmoPatientForm, HTMLStencilElement {
-  }
-
+  interface HTMLCosmoPatientFormElement extends Components.CosmoPatientForm, HTMLStencilElement {}
   var HTMLCosmoPatientFormElement: {
     prototype: HTMLCosmoPatientFormElement;
-    new(): HTMLCosmoPatientFormElement;
+    new (): HTMLCosmoPatientFormElement;
   };
 
-  interface HTMLCosmoPatientListElement extends Components.CosmoPatientList, HTMLStencilElement {
-  }
-
+  interface HTMLCosmoPatientListElement extends Components.CosmoPatientList, HTMLStencilElement {}
   var HTMLCosmoPatientListElement: {
     prototype: HTMLCosmoPatientListElement;
-    new(): HTMLCosmoPatientListElement;
+    new (): HTMLCosmoPatientListElement;
   };
 
-  interface HTMLCosmoPatientListContainerElement extends Components.CosmoPatientListContainer, HTMLStencilElement {
-  }
-
+  interface HTMLCosmoPatientListContainerElement extends Components.CosmoPatientListContainer, HTMLStencilElement {}
   var HTMLCosmoPatientListContainerElement: {
     prototype: HTMLCosmoPatientListContainerElement;
-    new(): HTMLCosmoPatientListContainerElement;
+    new (): HTMLCosmoPatientListContainerElement;
   };
-
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
@@ -96,31 +75,23 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface AppHome {
-  }
-
+  interface AppHome {}
   interface AppProfile {
     'name'?: string;
   }
-
-  interface AppRoot {
-  }
-
+  interface AppRoot {}
   interface CosmoPatientForm {
     'onPatientCreated'?: (event: CustomEvent<any>) => void;
     'onPatientUpdated'?: (event: CustomEvent<any>) => void;
     'patient'?: Patient;
   }
-
   interface CosmoPatientList {
     'onPatientSelected'?: (event: CustomEvent<any>) => void;
     'onPatientSelectedForDeletion'?: (event: CustomEvent<any>) => void;
     'onPatientSelectedForEdit'?: (event: CustomEvent<any>) => void;
     'patients'?: Patient[];
   }
-
-  interface CosmoPatientListContainer {
-  }
+  interface CosmoPatientListContainer {}
 
   interface IntrinsicElements {
     'app-home': AppHome;
@@ -132,7 +103,7 @@ declare namespace LocalJSX {
   }
 }
 
-export {LocalJSX as JSX};
+export { LocalJSX as JSX };
 
 
 declare module "@stencil/core" {
