@@ -1,6 +1,6 @@
-import {getById, getTable, removeById, set, update} from "../../helpers/storage";
-import {Patient} from "./patient";
-import {DATABASE_IDENTIFIER} from "../../config/constants";
+import {getById, getTable, removeById, set, update} from "../helpers/storage";
+import {Patient} from "../models/patient";
+import {DATABASE_IDENTIFIER} from "../config/constants";
 
 type Identifiable = { id: string };
 

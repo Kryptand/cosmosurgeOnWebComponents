@@ -1,6 +1,7 @@
 import {Component, Element, h, State} from '@stencil/core';
-import {Patient} from "./patient";
-import {PatientPersistorInstance} from "./patient-persistor";
+import {Patient} from "../../models/patient";
+import {PatientPersistorInstance} from "../../services/patient-persistor";
+import {RouterHandlerInstance} from "../../services/router-handler";
 
 
 @Component({
@@ -35,25 +36,20 @@ export class PatientListContainer {
   async componentWillLoad() {
     this.patients = await PatientPersistorInstance.getAll();
   }
-
+  
   async onPatientSelected(patient: Patient) {
-    const router = this.el.closest("ion-router");
-    console.debug(router);
-    await router.push(`/patients/${patient.id}`);
-
+    await RouterHandlerInstance.push(`cosmo-patient-detail`, {patientId: patient.id});
   }
 
   render = () => [
-    <ion-content>
-      <cosmo-patient-list onPatientSelected={ev => this.onPatientSelected(ev.detail)}
-                          onPatientSelectedForDeletion={ev => this.deletePatient(ev.detail)}
-                          onPatientSelectedForEdit={ev => this.openForm(ev, ev.detail)} patients={this.patients}/>
-      <ion-fab onClick={ev => this.openForm(ev)} vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button>
-          <ion-icon name="add"/>
-        </ion-fab-button>
-      </ion-fab>
-    </ion-content>
+    <cosmo-patient-list onPatientSelected={ev => this.onPatientSelected(ev.detail)}
+                        onPatientSelectedForDeletion={ev => this.deletePatient(ev.detail)}
+                        onPatientSelectedForEdit={ev => this.openForm(ev, ev.detail)} patients={this.patients}/>,
+    <ion-fab onClick={ev => this.openForm(ev)} vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add"/>
+      </ion-fab-button>
+    </ion-fab>
   ];
 }
 

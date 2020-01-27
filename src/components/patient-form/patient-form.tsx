@@ -1,7 +1,7 @@
 import {Component, Element, Event, EventEmitter, h, Prop, State} from '@stencil/core';
-import {Patient} from "./patient";
+import {Patient} from "../../models/patient";
 import {generateId} from "../../helpers/id-generator";
-import {PatientHeader} from "./patient-header";
+import {PatientHeader} from "../patient-header/patient-header";
 
 
 @Component({
@@ -25,7 +25,6 @@ export class PatientForm {
   @Element() el: HTMLElement;
 
   modalElement: HTMLIonModalElement = this.el.closest("ion-modal");
-
 
   componentDidLoad() {
     this.initParams(this.modalElement?.componentProps?.patient);

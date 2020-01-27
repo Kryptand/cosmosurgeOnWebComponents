@@ -1,5 +1,4 @@
 import {PatientHeader} from "./patient-header";
-import {Patient} from "./patient";
 
 const MOCK_PATIENT = {
   firstname: 'Tester',

@@ -9,14 +9,14 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   Patient,
-} from './components/patient-list/patient';
+} from './models/patient';
 
 export namespace Components {
-  interface AppHome {}
-  interface AppProfile {
-    'name': string;
-  }
   interface AppRoot {}
+  interface CosmoBaseLayout {}
+  interface CosmoPatientDetail {
+    'patientId': string;
+  }
   interface CosmoPatientForm {
     'patient': Patient;
   }
@@ -29,22 +29,22 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
-  };
-
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
-  };
-
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
+  };
+
+  interface HTMLCosmoBaseLayoutElement extends Components.CosmoBaseLayout, HTMLStencilElement {}
+  var HTMLCosmoBaseLayoutElement: {
+    prototype: HTMLCosmoBaseLayoutElement;
+    new (): HTMLCosmoBaseLayoutElement;
+  };
+
+  interface HTMLCosmoPatientDetailElement extends Components.CosmoPatientDetail, HTMLStencilElement {}
+  var HTMLCosmoPatientDetailElement: {
+    prototype: HTMLCosmoPatientDetailElement;
+    new (): HTMLCosmoPatientDetailElement;
   };
 
   interface HTMLCosmoPatientFormElement extends Components.CosmoPatientForm, HTMLStencilElement {}
@@ -65,9 +65,9 @@ declare global {
     new (): HTMLCosmoPatientListContainerElement;
   };
   interface HTMLElementTagNameMap {
-    'app-home': HTMLAppHomeElement;
-    'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
+    'cosmo-base-layout': HTMLCosmoBaseLayoutElement;
+    'cosmo-patient-detail': HTMLCosmoPatientDetailElement;
     'cosmo-patient-form': HTMLCosmoPatientFormElement;
     'cosmo-patient-list': HTMLCosmoPatientListElement;
     'cosmo-patient-list-container': HTMLCosmoPatientListContainerElement;
@@ -75,11 +75,11 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface AppHome {}
-  interface AppProfile {
-    'name'?: string;
-  }
   interface AppRoot {}
+  interface CosmoBaseLayout {}
+  interface CosmoPatientDetail {
+    'patientId'?: string;
+  }
   interface CosmoPatientForm {
     'onPatientCreated'?: (event: CustomEvent<any>) => void;
     'onPatientUpdated'?: (event: CustomEvent<any>) => void;
@@ -94,9 +94,9 @@ declare namespace LocalJSX {
   interface CosmoPatientListContainer {}
 
   interface IntrinsicElements {
-    'app-home': AppHome;
-    'app-profile': AppProfile;
     'app-root': AppRoot;
+    'cosmo-base-layout': CosmoBaseLayout;
+    'cosmo-patient-detail': CosmoPatientDetail;
     'cosmo-patient-form': CosmoPatientForm;
     'cosmo-patient-list': CosmoPatientList;
     'cosmo-patient-list-container': CosmoPatientListContainer;
@@ -109,9 +109,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-      'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+      'cosmo-base-layout': LocalJSX.CosmoBaseLayout & JSXBase.HTMLAttributes<HTMLCosmoBaseLayoutElement>;
+      'cosmo-patient-detail': LocalJSX.CosmoPatientDetail & JSXBase.HTMLAttributes<HTMLCosmoPatientDetailElement>;
       'cosmo-patient-form': LocalJSX.CosmoPatientForm & JSXBase.HTMLAttributes<HTMLCosmoPatientFormElement>;
       'cosmo-patient-list': LocalJSX.CosmoPatientList & JSXBase.HTMLAttributes<HTMLCosmoPatientListElement>;
       'cosmo-patient-list-container': LocalJSX.CosmoPatientListContainer & JSXBase.HTMLAttributes<HTMLCosmoPatientListContainerElement>;

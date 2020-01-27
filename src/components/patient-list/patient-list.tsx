@@ -1,5 +1,5 @@
 import {Component, Event, EventEmitter, h, Prop} from '@stencil/core';
-import {Patient} from "./patient";
+import {Patient} from "../../models/patient";
 
 @Component({
   tag: 'cosmo-patient-list'
