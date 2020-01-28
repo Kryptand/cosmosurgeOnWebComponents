@@ -12,12 +12,12 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watch",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "buildnrun": "stencil build --prod && cd ./www && ws --spa=index.html --compress --http2"
   },
   "dependencies": {
     "@capacitor/android": "^1.4.0",
-    "@capacitor/cli": "^1.4.0",
-    "@capacitor/core": "^1.4.0",
+    "@capacitor/core": "1.4.0",
     "@ionic-native/image-picker": "^5.19.1",
     "@ionic/core": "^4.11.7",
     "@jeepq/capacitor": "0.0.1-beta.2",
@@ -26,8 +26,9 @@
     "uuid": "^3.4.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "1.4.0",
     "@stencil/core": "^1.8.4",
-    "@types/jest": "24.0.25",
+    "@types/jest": "^24.0.25",
     "@types/puppeteer": "1.19.0",
     "jest": "24.9.0",
     "jest-cli": "24.9.0",

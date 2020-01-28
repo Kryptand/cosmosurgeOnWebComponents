@@ -1,7 +1,7 @@
 import {Component, h, State} from "@stencil/core";
 import {EventBusInstance, Receiver, Subject} from "../../helpers/pub-sub";
 
-@Component({tag: 'cosmo-base-layout'})
+@Component({tag: "cosmo-base-layout"})
 export class BaseLayout implements Receiver {
   @State() title: string;
 
@@ -11,7 +11,7 @@ export class BaseLayout implements Receiver {
   }
 
   connectedCallback() {
-    EventBusInstance.subscribe('title', this);
+    EventBusInstance.subscribe("title", this);
   }
 
   render() {
@@ -28,11 +28,14 @@ export class BaseLayout implements Receiver {
         <ion-router useHash={false}>
           <ion-route url="/" component="cosmo-patient-list-container"/>
           <ion-route-redirect from="/patients" to="/"/>
-          <ion-route url="/detail/:patientId" component="cosmo-patient-detail"/>
+          <ion-route
+            url="/detail/:patientId"
+            component="cosmo-patient-detail"
+          />
         </ion-router>
         <ion-nav/>
       </ion-content>,
       <ion-footer/>
-    ]
+    ];
   }
 }

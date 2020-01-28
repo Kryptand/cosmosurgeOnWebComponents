@@ -12,17 +12,15 @@ export class RouterHandler {
   }
 
   go(url: string) {
-    this.routerInstance &&
-    this.routerInstance.push(url, 'forward');
+    this.routerInstance && this.routerInstance.push(url, "forward");
   }
 
   push(elementSelector: string, props: any) {
-    this.navInstance && this.navInstance.push(elementSelector, props)
+    this.navInstance && this.navInstance.push(elementSelector, props);
   }
 
   back() {
-    this.routerInstance &&
-    this.routerInstance.back();
+    this.routerInstance && this.routerInstance.back();
   }
 }
 

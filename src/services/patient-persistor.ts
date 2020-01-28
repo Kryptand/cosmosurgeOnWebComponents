@@ -1,4 +1,4 @@
-import {getById, getTable, removeById, set, update} from "../helpers/storage";
+import {getById, getKeys, getTable, removeById, set, update} from "../helpers/storage";
 import {Patient} from "../models/patient";
 import {DATABASE_IDENTIFIER} from "../config/constants";
 
@@ -7,16 +7,20 @@ type Identifiable = { id: string };
 export abstract class AbstractPersistor<T extends Identifiable> {
   TABLE_IDENTIFIER;
 
-  async add(entity: T): Promise<void> {
-    await set(DATABASE_IDENTIFIER, this.TABLE_IDENTIFIER, entity.id, entity);
+  async add(entity: T, key: string): Promise<void> {
+    await set(DATABASE_IDENTIFIER, this.TABLE_IDENTIFIER, key, entity);
   }
 
-  async update(entity: T): Promise<void> {
-    await update(DATABASE_IDENTIFIER, this.TABLE_IDENTIFIER, entity.id, entity);
+  async update(entity: T, key: string): Promise<void> {
+    await update(DATABASE_IDENTIFIER, this.TABLE_IDENTIFIER, key, entity);
   }
 
-  async remove(entity: T): Promise<void> {
-    await removeById(DATABASE_IDENTIFIER, this.TABLE_IDENTIFIER, entity.id);
+  async remove(key: string): Promise<void> {
+    await removeById(DATABASE_IDENTIFIER, this.TABLE_IDENTIFIER, key);
+  }
+
+  async getKeys(): Promise<any> {
+    return getKeys(DATABASE_IDENTIFIER, this.TABLE_IDENTIFIER);
   }
 
   async getAll(): Promise<T[]> {
@@ -29,7 +33,7 @@ export abstract class AbstractPersistor<T extends Identifiable> {
 }
 
 export class PatientPersistor extends AbstractPersistor<Patient> {
-  TABLE_IDENTIFIER = 'PATIENT_STORAGE';
+  TABLE_IDENTIFIER = "PATIENT_STORAGE";
 }
 
 export const PatientPersistorInstance = new PatientPersistor();

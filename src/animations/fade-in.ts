@@ -1,6 +1,9 @@
 import {Animation} from "@ionic/core";
 
-export const fadeIn = (AnimationC: Animation, baseEl: HTMLElement): Promise<Animation> => {
+export const fadeIn = (
+  AnimationC: Animation,
+  baseEl: HTMLElement
+): Promise<Animation> => {
   const baseAnimation = new AnimationC();
 
   const backdropAnimation = new AnimationC();
@@ -9,7 +12,9 @@ export const fadeIn = (AnimationC: Animation, baseEl: HTMLElement): Promise<Anim
   const wrapperAnimation = new AnimationC();
   wrapperAnimation.addElement(baseEl.querySelector(".modal-wrapper"));
 
-  wrapperAnimation.beforeStyles({opacity: 1}).fromTo("translateX", "0%", "0%");
+  wrapperAnimation
+    .beforeStyles({opacity: 1})
+    .fromTo("translateX", "0%", "0%");
 
   backdropAnimation.fromTo("opacity", 0.01, 0.4);
 

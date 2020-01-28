@@ -1,7 +1,8 @@
 {
   "name": "cosmopatient",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "custom"
 }
