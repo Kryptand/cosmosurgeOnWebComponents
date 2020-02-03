@@ -52,14 +52,8 @@ export class PatientForm {
         <ion-input id="test-patient-form-lastname" maxlength={80} value={this.lastname}
                    onInput={(event) => this.handleLastNameChange(event)}/>
       </ion-item>
-      <div class="flex">
-        <span class="spacer"/>
-        <ion-button id="test-patient-form-cancel" color="danger">Abbrechen</ion-button>
-        <ion-button id="test-patient-form-submit" type="submit" color="success"
-                    disabled={!this.firstname || !this.lastname}
-                    onClick={() => this.handleSubmit()}>Speichern
-        </ion-button>
-      </div>
+      <cosmo-submit-cancel submitDisabled={!this.firstname && !this.lastname}
+                           onSubmitEvent={() => this.handleSubmit()}/>
     </ion-content>
   ];
 

@@ -18,13 +18,16 @@ export type ThreadType =
 export type BotoxRegion =
   | "forehead"
   | "frownLines"
+  | "eyelid"
+  | "gummySmile"
   | "droppyBrows"
   | "bunnyLines"
   | "crowsFeet"
   | "lipLines"
   | "marionetteLines"
   | "chin"
-  | "neck" ;
+  | "neck"
+  | string ;
 
 export class Treatment {
   id: string;

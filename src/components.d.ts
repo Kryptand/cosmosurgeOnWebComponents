@@ -11,32 +11,55 @@ import {
   Appointment,
 } from './services/appointment-persistor';
 import {
-  Patient,
-} from './models/patient';
-import {
+  BotoxTreatment,
   Treatment,
 } from './services/treatment-persistor';
+import {
+  Patient,
+} from './models/patient';
 
 export namespace Components {
-  interface AppRoot {}
+  interface AppRoot {
+  }
+
   interface CosmoAppointmentContainer {
     'patientId': string;
   }
+
   interface CosmoAppointmentList {
     'appointments': Appointment[];
   }
-  interface CosmoBaseLayout {}
-  interface CosmoBotoxTreatmentFaceMap {}
-  interface CosmoPatientContainer {}
+
+  interface CosmoBaseLayout {
+  }
+
+  interface CosmoBotoxTreatmentFaceMap {
+    'botoxTreatment': BotoxTreatment;
+  }
+
+  interface CosmoBotoxTreatmentFaceMap {
+    'botoxTreatment': BotoxTreatment;
+  }
+
+  interface CosmoPatientContainer {
+  }
+
   interface CosmoPatientDetail {
     'patientId': string;
   }
+
   interface CosmoPatientForm {
     'patient': Patient;
   }
+
   interface CosmoPatientList {
     'patients': Patient[];
   }
+
+  interface CosmoSubmitCancel {
+    'submitDisabled': boolean;
+  }
+
   interface CosmoTreatmentForm {
     'treatment': Treatment;
   }
@@ -66,22 +89,36 @@ declare global {
   interface HTMLCosmoBaseLayoutElement extends Components.CosmoBaseLayout, HTMLStencilElement {}
   var HTMLCosmoBaseLayoutElement: {
     prototype: HTMLCosmoBaseLayoutElement;
-    new (): HTMLCosmoBaseLayoutElement;
+    new(): HTMLCosmoBaseLayoutElement;
   };
 
-  interface HTMLCosmoBotoxTreatmentFaceMapElement extends Components.CosmoBotoxTreatmentFaceMap, HTMLStencilElement {}
+  interface HTMLCosmoBotoxTreatmentFaceMapElement extends Components.CosmoBotoxTreatmentFaceMap, HTMLStencilElement {
+  }
+
   var HTMLCosmoBotoxTreatmentFaceMapElement: {
     prototype: HTMLCosmoBotoxTreatmentFaceMapElement;
-    new (): HTMLCosmoBotoxTreatmentFaceMapElement;
+    new(): HTMLCosmoBotoxTreatmentFaceMapElement;
   };
 
-  interface HTMLCosmoPatientContainerElement extends Components.CosmoPatientContainer, HTMLStencilElement {}
+  interface HTMLCosmoBotoxTreatmentFaceMapElement extends Components.CosmoBotoxTreatmentFaceMap, HTMLStencilElement {
+  }
+
+  var HTMLCosmoBotoxTreatmentFaceMapElement: {
+    prototype: HTMLCosmoBotoxTreatmentFaceMapElement;
+    new(): HTMLCosmoBotoxTreatmentFaceMapElement;
+  };
+
+  interface HTMLCosmoPatientContainerElement extends Components.CosmoPatientContainer, HTMLStencilElement {
+  }
+
   var HTMLCosmoPatientContainerElement: {
     prototype: HTMLCosmoPatientContainerElement;
-    new (): HTMLCosmoPatientContainerElement;
+    new(): HTMLCosmoPatientContainerElement;
   };
 
-  interface HTMLCosmoPatientDetailElement extends Components.CosmoPatientDetail, HTMLStencilElement {}
+  interface HTMLCosmoPatientDetailElement extends Components.CosmoPatientDetail, HTMLStencilElement {
+  }
+
   var HTMLCosmoPatientDetailElement: {
     prototype: HTMLCosmoPatientDetailElement;
     new (): HTMLCosmoPatientDetailElement;
@@ -90,60 +127,103 @@ declare global {
   interface HTMLCosmoPatientFormElement extends Components.CosmoPatientForm, HTMLStencilElement {}
   var HTMLCosmoPatientFormElement: {
     prototype: HTMLCosmoPatientFormElement;
-    new (): HTMLCosmoPatientFormElement;
+    new(): HTMLCosmoPatientFormElement;
   };
 
-  interface HTMLCosmoPatientListElement extends Components.CosmoPatientList, HTMLStencilElement {}
+  interface HTMLCosmoPatientListElement extends Components.CosmoPatientList, HTMLStencilElement {
+  }
+
   var HTMLCosmoPatientListElement: {
     prototype: HTMLCosmoPatientListElement;
-    new (): HTMLCosmoPatientListElement;
+    new(): HTMLCosmoPatientListElement;
   };
 
-  interface HTMLCosmoTreatmentFormElement extends Components.CosmoTreatmentForm, HTMLStencilElement {}
+  interface HTMLCosmoSubmitCancelElement extends Components.CosmoSubmitCancel, HTMLStencilElement {
+  }
+
+  var HTMLCosmoSubmitCancelElement: {
+    prototype: HTMLCosmoSubmitCancelElement;
+    new(): HTMLCosmoSubmitCancelElement;
+  };
+
+  interface HTMLCosmoTreatmentFormElement extends Components.CosmoTreatmentForm, HTMLStencilElement {
+  }
+
   var HTMLCosmoTreatmentFormElement: {
     prototype: HTMLCosmoTreatmentFormElement;
-    new (): HTMLCosmoTreatmentFormElement;
+    new(): HTMLCosmoTreatmentFormElement;
   };
+
   interface HTMLElementTagNameMap {
     'app-root': HTMLAppRootElement;
     'cosmo-appointment-container': HTMLCosmoAppointmentContainerElement;
     'cosmo-appointment-list': HTMLCosmoAppointmentListElement;
     'cosmo-base-layout': HTMLCosmoBaseLayoutElement;
     'cosmo-botox-treatment-face-map': HTMLCosmoBotoxTreatmentFaceMapElement;
+    'cosmo-botox-treatment-face-map': HTMLCosmoBotoxTreatmentFaceMapElement;
     'cosmo-patient-container': HTMLCosmoPatientContainerElement;
     'cosmo-patient-detail': HTMLCosmoPatientDetailElement;
     'cosmo-patient-form': HTMLCosmoPatientFormElement;
     'cosmo-patient-list': HTMLCosmoPatientListElement;
+    'cosmo-submit-cancel': HTMLCosmoSubmitCancelElement;
     'cosmo-treatment-form': HTMLCosmoTreatmentFormElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface AppRoot {}
+  interface AppRoot {
+  }
+
   interface CosmoAppointmentContainer {
     'patientId'?: string;
   }
+
   interface CosmoAppointmentList {
     'appointments'?: Appointment[];
     'onAppointmentSelected'?: (event: CustomEvent<any>) => void;
   }
-  interface CosmoBaseLayout {}
-  interface CosmoBotoxTreatmentFaceMap {}
-  interface CosmoPatientContainer {}
+
+  interface CosmoBaseLayout {
+  }
+
+  interface CosmoBotoxTreatmentFaceMap {
+    'botoxTreatment'?: BotoxTreatment;
+    'onTreatmentCreated'?: (event: CustomEvent<any>) => void;
+    'onTreatmentsUpdated'?: (event: CustomEvent<any>) => void;
+  }
+
+  interface CosmoBotoxTreatmentFaceMap {
+    'botoxTreatment'?: BotoxTreatment;
+    'onTreatmentCreated'?: (event: CustomEvent<any>) => void;
+    'onTreatmentsUpdated'?: (event: CustomEvent<any>) => void;
+  }
+
+  interface CosmoPatientContainer {
+  }
+
   interface CosmoPatientDetail {
     'patientId'?: string;
   }
+
   interface CosmoPatientForm {
     'onPatientCreated'?: (event: CustomEvent<any>) => void;
     'onPatientUpdated'?: (event: CustomEvent<any>) => void;
     'patient'?: Patient;
   }
+
   interface CosmoPatientList {
     'onPatientSelected'?: (event: CustomEvent<any>) => void;
     'onPatientSelectedForDeletion'?: (event: CustomEvent<any>) => void;
     'onPatientSelectedForEdit'?: (event: CustomEvent<any>) => void;
     'patients'?: Patient[];
   }
+
+  interface CosmoSubmitCancel {
+    'onCancelEvent'?: (event: CustomEvent<any>) => void;
+    'onSubmitEvent'?: (event: CustomEvent<any>) => void;
+    'submitDisabled'?: boolean;
+  }
+
   interface CosmoTreatmentForm {
     'onTreatmentCreated'?: (event: CustomEvent<any>) => void;
     'onTreatmentUpdated'?: (event: CustomEvent<any>) => void;
@@ -156,10 +236,12 @@ declare namespace LocalJSX {
     'cosmo-appointment-list': CosmoAppointmentList;
     'cosmo-base-layout': CosmoBaseLayout;
     'cosmo-botox-treatment-face-map': CosmoBotoxTreatmentFaceMap;
+    'cosmo-botox-treatment-face-map': CosmoBotoxTreatmentFaceMap;
     'cosmo-patient-container': CosmoPatientContainer;
     'cosmo-patient-detail': CosmoPatientDetail;
     'cosmo-patient-form': CosmoPatientForm;
     'cosmo-patient-list': CosmoPatientList;
+    'cosmo-submit-cancel': CosmoSubmitCancel;
     'cosmo-treatment-form': CosmoTreatmentForm;
   }
 }
@@ -175,10 +257,12 @@ declare module "@stencil/core" {
       'cosmo-appointment-list': LocalJSX.CosmoAppointmentList & JSXBase.HTMLAttributes<HTMLCosmoAppointmentListElement>;
       'cosmo-base-layout': LocalJSX.CosmoBaseLayout & JSXBase.HTMLAttributes<HTMLCosmoBaseLayoutElement>;
       'cosmo-botox-treatment-face-map': LocalJSX.CosmoBotoxTreatmentFaceMap & JSXBase.HTMLAttributes<HTMLCosmoBotoxTreatmentFaceMapElement>;
+      'cosmo-botox-treatment-face-map': LocalJSX.CosmoBotoxTreatmentFaceMap & JSXBase.HTMLAttributes<HTMLCosmoBotoxTreatmentFaceMapElement>;
       'cosmo-patient-container': LocalJSX.CosmoPatientContainer & JSXBase.HTMLAttributes<HTMLCosmoPatientContainerElement>;
       'cosmo-patient-detail': LocalJSX.CosmoPatientDetail & JSXBase.HTMLAttributes<HTMLCosmoPatientDetailElement>;
       'cosmo-patient-form': LocalJSX.CosmoPatientForm & JSXBase.HTMLAttributes<HTMLCosmoPatientFormElement>;
       'cosmo-patient-list': LocalJSX.CosmoPatientList & JSXBase.HTMLAttributes<HTMLCosmoPatientListElement>;
+      'cosmo-submit-cancel': LocalJSX.CosmoSubmitCancel & JSXBase.HTMLAttributes<HTMLCosmoSubmitCancelElement>;
       'cosmo-treatment-form': LocalJSX.CosmoTreatmentForm & JSXBase.HTMLAttributes<HTMLCosmoTreatmentFormElement>;
     }
   }
